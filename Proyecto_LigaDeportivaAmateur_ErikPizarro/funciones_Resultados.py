@@ -107,7 +107,7 @@ def estadisticas_porID(lista):
     while True:
         for articulos in lista:
             if articulos["id"] == eleccion:
-                print(articulos)
+                rprint(articulos)
                 return
-        print("Id no valido")
+        rprint("Id no valido")
         eleccion = int(input("Escribe el id del equipo a ver el id: "))
