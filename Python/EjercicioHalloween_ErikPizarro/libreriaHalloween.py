@@ -18,7 +18,7 @@ def calcularPorcentaje_CapturaMonstruo(monstruo):
             MaxPorcentaje = 5
         elif dificultad == 2:
             minPorcentaje = 1
-            MaxPorcentaje = 110
+            MaxPorcentaje = 10
         elif dificultad == 3:
             minPorcentaje = 1
             MaxPorcentaje = 15
