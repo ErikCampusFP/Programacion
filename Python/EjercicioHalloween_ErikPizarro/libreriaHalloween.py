@@ -9,51 +9,51 @@ def generar_monstruo(lista):
 
 def calcularPorcentaje_CapturaMonstruo(monstruo):
     minPorcentaje = 0
-    MaxPorcentaje = 0
+    maxPorcentaje = 0
 
     for nombre, dificultad in monstruo.items():
 # Por cada nivel de dificultad, un porcentaje distinto. 
         if dificultad == 1:
             minPorcentaje = 1
-            MaxPorcentaje = 5
+            maxPorcentaje = 5
         elif dificultad == 2:
             minPorcentaje = 1
-            MaxPorcentaje = 10
+            maxPorcentaje = 10
         elif dificultad == 3:
             minPorcentaje = 1
-            MaxPorcentaje = 15
+            maxPorcentaje = 15
         elif dificultad == 4:
             minPorcentaje = 1
-            MaxPorcentaje = 20
+            maxPorcentaje = 20
         else:
             minPorcentaje = 1
-            MaxPorcentaje = 25
-    porcentajeCaptura = random.randint(minPorcentaje, MaxPorcentaje)
+            maxPorcentaje = 25
+    porcentajeCaptura = random.randint(minPorcentaje, maxPorcentaje)
     return porcentajeCaptura
 
 
 def calcularPorcentajeObjeto(monstruo):
     minPorcentaje = 0
-    MaxPorcentaje = 0
+    maxPorcentaje = 0
 
     for nombre, dificultad in monstruo.items():
 # Por cada nivel de dificultad, un porcentaje distinto. 
         if dificultad == 1:
             minPorcentaje = 1
-            MaxPorcentaje = 5
+            maxPorcentaje = 5
         elif dificultad == 2:
             minPorcentaje = 1
-            MaxPorcentaje = 10
+            maxPorcentaje = 10
         elif dificultad == 3:
             minPorcentaje = 1
-            MaxPorcentaje = 15
+            maxPorcentaje = 15
         elif dificultad == 4:
             minPorcentaje = 1
-            MaxPorcentaje = 20
+            maxPorcentaje = 20
         else:
             minPorcentaje = 1
-            MaxPorcentaje = 25
-    porcentajeCapturaObjeto = random.randint(minPorcentaje, MaxPorcentaje)
+            maxPorcentaje = 25
+    porcentajeCapturaObjeto = random.randint(minPorcentaje, maxPorcentaje)
     return porcentajeCapturaObjeto
 
 def funciónHalloween(monstruo, objetos, oportunidades):
