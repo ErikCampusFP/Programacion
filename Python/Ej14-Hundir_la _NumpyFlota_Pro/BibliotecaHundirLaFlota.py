@@ -4,19 +4,19 @@ from rich import print as rprint
 
 # Genera la posición de los barcos (hay algunas que tienen el rango diferente, ya que sirven para que pueda haber barcos de dos, tres y cuatro casillas)
 def generar_posicionBarco1():
-    posicionBarco = random.randint(1,19)
+    posicionBarco = random.randint(0,19)
     return posicionBarco
 
 def generar_posicion_Y_Barco1():
-    posicionBarco = random.randint(1,18)
+    posicionBarco = random.randint(0,18)
     return posicionBarco 
 
 def generar_posicion_X_Barco2():
-    posicionBarco = random.randint(1,17)
+    posicionBarco = random.randint(0,17)
     return posicionBarco
 
 def generar_posicion_Y_Barco3():
-    posicionBarco = random.randint(1,16)
+    posicionBarco = random.randint(0,16)
     return posicionBarco 
 
 
@@ -30,18 +30,30 @@ def generar_tablero(posicionXBarco1, posicionYBarco1,posicionXBarco2, posicionYB
     tablero [posicionXBarco1 , posicionYBarco1 + 1] = 0
 
     # Generar Posición Barco 2
+    while tablero[posicionXBarco2, posicionYBarco2] == 0 or tablero[posicionXBarco2 + 1, posicionYBarco2] == 0 or tablero[posicionXBarco2 + 2, posicionYBarco2] == 0:
+        posicionXBarco2 = generar_posicion_X_Barco2()
+        posicionYBarco2 = generar_posicionBarco1()
+
     tablero [posicionXBarco2, posicionYBarco2] = 0
     tablero [posicionXBarco2 + 1 , posicionYBarco2] = 0
     tablero [posicionXBarco2 + 2 , posicionYBarco2] = 0
 
     # Generar Posición Barco 3
+   
+    while tablero[posicionXBarco3, posicionYBarco3] == 0 or tablero[posicionXBarco3, posicionYBarco3 + 1] == 0 or tablero[posicionXBarco3, posicionYBarco3 + 2] == 0 or tablero[posicionXBarco3, posicionYBarco3 + 3] == 0: 
+        posicionXBarco3 = generar_posicion_Y_Barco3()
+        posicionYBarco3 = generar_posicionBarco1()
+
+
+        
+
     tablero [posicionXBarco3, posicionYBarco3] = 0
     tablero [posicionXBarco3 , posicionYBarco3 + 1] = 0
     tablero [posicionXBarco3 , posicionYBarco3 + 2] = 0
     tablero [posicionXBarco3 , posicionYBarco3 + 3] = 0
     return tablero
 
-    # Genera tablero que ve el usuario 
+# Genera tablero que ve el usuario 
 def generar_Tablero_User():
     # Generar Tableros
     tablero = np.arange(1, 401).reshape((20, 20))

@@ -10,6 +10,7 @@ trozosDestruidos  = 0
 trozosFaltantes = 9
 menu = ["1. Guardar", "2. Salir" ]
 
+
 posicionXBarco1 = BibliotecaHundirLaFlota.generar_posicionBarco1()
 posicionYBarco1 = BibliotecaHundirLaFlota.generar_posicion_Y_Barco1()
 
@@ -27,8 +28,18 @@ rprint("------------------------------------------------------------------------
 # Genera el tablero que posee los barcos
 TableroOriginal = BibliotecaHundirLaFlota.generar_tablero(posicionXBarco1, posicionYBarco1, posicionXBarco2, posicionYBarco2, posicionXBarco3, posicionYBarco3)
 
-# Genera el tablero que ve el usuario
-TableroUser  = BibliotecaHundirLaFlota.generar_Tablero_User()
+print(posicionXBarco1)
+print(posicionYBarco1)
 
-# Es la función que realiza todo el juego
-BibliotecaHundirLaFlota.juego(TableroOriginal, TableroUser, numeroIntentos, trozosDestruidos, trozosFaltantes, menu)
+print(posicionXBarco2)
+print(posicionYBarco2)
+
+print(posicionXBarco3)
+print(posicionYBarco3)
+
+
+# # Genera el tablero que ve el usuario
+# TableroUser  = BibliotecaHundirLaFlota.generar_Tablero_User()
+
+# # Es la función que realiza todo el juego
+# BibliotecaHundirLaFlota.juego(TableroOriginal, TableroUser, numeroIntentos, trozosDestruidos, trozosFaltantes, menu)
