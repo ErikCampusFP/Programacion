@@ -88,7 +88,7 @@ def juego(tableroOrig, TableroUser, NumeroIntentos, TrozosDestruidos, TrozosFalt
                 match opcion:
                     case 1:
                         guardar_partida(tableroOrig, TableroUser, NumeroIntentos, TrozosDestruidos, TrozosFaltantes, guardado)
-                        rprint("Partida guardada en partida_comenzada.txt")
+                        rprint("Partida guardada Correctamente")
                     case 2:
                         opcion = 2
                     case _:
