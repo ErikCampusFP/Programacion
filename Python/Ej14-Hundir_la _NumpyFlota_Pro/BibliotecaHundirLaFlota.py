@@ -59,10 +59,8 @@ def generar_Tablero_User():
     tablero = np.arange(1, 401).reshape((20, 20))
     return(tablero)
 
-    
 
-
-def juego(tableroOrig, TableroUser, NumeroIntentos, TrozosDestruidos, TrozosFaltantes, menu):
+def juego(tableroOrig, TableroUser, NumeroIntentos, TrozosDestruidos, TrozosFaltantes, menu, archivo, guardado):
   
     while TrozosFaltantes != 0:
 
@@ -89,7 +87,8 @@ def juego(tableroOrig, TableroUser, NumeroIntentos, TrozosDestruidos, TrozosFalt
             while opcion != 2:
                 match opcion:
                     case 1:
-                        rprint("Guardar aun no esta implementado implementado")
+                        guardar_partida(tableroOrig, TableroUser, NumeroIntentos, TrozosDestruidos, TrozosFaltantes, guardado)
+                        rprint("Partida guardada en partida_comenzada.txt")
                     case 2:
                         opcion = 2
                     case _:
@@ -134,3 +133,56 @@ def juego(tableroOrig, TableroUser, NumeroIntentos, TrozosDestruidos, TrozosFalt
     # Una vez TrozosFaltantes == 0, muetra un mensaje de victoria con los intentos realizados
     rprint("-----------------------------------------------------------------------------------")
     rprint(f"¡¡¡¡¡Felicidades Ganaste con {NumeroIntentos} intentos!!!!!")
+    guardado = False
+
+    # Elimina el contenido del archivo guardado
+    if archivo is not None:
+        with open('partida_comenzada.txt', 'w') as f:
+            pass  # Deja el archivo vacío
+
+def guardar_partida(tablero_orig, tablero_user, intentos, destruidos, faltantes, guardado):
+    guardado = True
+    with open('partida_comenzada.txt', 'w') as f:
+        # Guardar las 3 variables
+        f.write(str(intentos) + '\n')
+        f.write(str(destruidos) + '\n')
+        f.write(str(faltantes) + '\n')
+        
+        # Guardar tablero original
+        for fila in tablero_orig:
+            f.write(','.join(map(str, fila)) + '\n')
+        # Guardar tablero del usuario
+        for fila in tablero_user:
+            f.write(','.join(map(str, fila)) + '\n')
+
+
+
+def cargar_partida():
+    with open('partida_comenzada.txt', 'r') as f:
+        lineas = f.readlines()
+        try:
+            # Leer variables
+            intentos = int(lineas[0].strip())
+            destruidos = int(lineas[1].strip())
+            faltantes = int(lineas[2].strip())
+
+            # Leer tablero original (líneas 3 a 22)
+            tablero_orig = []
+            for i in range(3, 23):
+                nums = lineas[i].strip().split(',')
+                fila = [int(x) for x in nums]
+                tablero_orig.append(fila)
+
+            # Leer tablero usuario (líneas 23 a 42)
+            tablero_user = []
+            for i in range(23, 43):
+                nums = lineas[i].strip().split(',')
+                fila = [int(x) for x in nums]
+                tablero_user.append(fila)
+
+            # Devolver Resultados en arrays
+            return np.array(tablero_orig), np.array(tablero_user), intentos, destruidos, faltantes
+
+        except:
+            # Si no le nada (partida vacia)
+            return None
