@@ -30,6 +30,7 @@ def generar_tablero(posicionXBarco1, posicionYBarco1,posicionXBarco2, posicionYB
     tablero [posicionXBarco1 , posicionYBarco1 + 1] = 0
 
     # Generar Posición Barco 2
+    # Comprobar que no existan barcos en su posición
     while tablero[posicionXBarco2, posicionYBarco2] == 0 or tablero[posicionXBarco2 + 1, posicionYBarco2] == 0 or tablero[posicionXBarco2 + 2, posicionYBarco2] == 0:
         posicionXBarco2 = generar_posicion_X_Barco2()
         posicionYBarco2 = generar_posicionBarco1()
@@ -39,7 +40,7 @@ def generar_tablero(posicionXBarco1, posicionYBarco1,posicionXBarco2, posicionYB
     tablero [posicionXBarco2 + 2 , posicionYBarco2] = 0
 
     # Generar Posición Barco 3
-   
+    # Comprobar que no existan barcos en su posición
     while tablero[posicionXBarco3, posicionYBarco3] == 0 or tablero[posicionXBarco3, posicionYBarco3 + 1] == 0 or tablero[posicionXBarco3, posicionYBarco3 + 2] == 0 or tablero[posicionXBarco3, posicionYBarco3 + 3] == 0: 
         posicionXBarco3 = generar_posicion_Y_Barco3()
         posicionYBarco3 = generar_posicionBarco1()
