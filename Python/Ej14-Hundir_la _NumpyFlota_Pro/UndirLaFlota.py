@@ -61,5 +61,3 @@ rprint("------------------------------------------------------------------------
 
 # Es la función que realiza todo el juego
 BibliotecaHundirLaFlota.juego(TableroOriginal, TableroUser, numeroIntentos, trozosDestruidos, trozosFaltantes, menu, archivo, guardado)
-
-# BibliotecaHundirLaFlota.cargar_partida(TableroOriginal, TableroUser, numeroIntentos, trozosDestruidos, trozosFaltantes)
