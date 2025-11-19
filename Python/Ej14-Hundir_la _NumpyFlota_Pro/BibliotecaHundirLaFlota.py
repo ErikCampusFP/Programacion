@@ -1,6 +1,7 @@
 import random
 import numpy as np
 from rich import print as rprint
+import pickle
 
 # Genera la posición de los barcos (hay algunas que tienen el rango diferente, ya que sirven para que pueda haber barcos de dos, tres y cuatro casillas)
 def generar_posicionBarco1():
@@ -88,7 +89,7 @@ def juego(tableroOrig, TableroUser, NumeroIntentos, TrozosDestruidos, TrozosFalt
             while opcion != 2:
                 match opcion:
                     case 1:
-                        guardar_partida(tableroOrig, TableroUser, NumeroIntentos, TrozosDestruidos, TrozosFaltantes, guardado)
+                        guardar_partida(tableroOrig, TableroUser, NumeroIntentos, TrozosDestruidos, TrozosFaltantes)
                         rprint("Partida guardada Correctamente")
                     case 2:
                         opcion = 2
@@ -141,49 +142,30 @@ def juego(tableroOrig, TableroUser, NumeroIntentos, TrozosDestruidos, TrozosFalt
         with open('partida_comenzada.txt', 'w') as f:
             pass  # Deja el archivo vacío
 
-def guardar_partida(tablero_orig, tablero_user, intentos, destruidos, faltantes, guardado):
-    guardado = True
-    with open('partida_comenzada.txt', 'w') as f:
-        # Guardar las 3 variables
-        f.write(str(intentos) + '\n')
-        f.write(str(destruidos) + '\n')
-        f.write(str(faltantes) + '\n')
-        
-        # Guardar tablero original
-        for fila in tablero_orig:
-            f.write(','.join(map(str, fila)) + '\n')
-        # Guardar tablero del usuario
-        for fila in tablero_user:
-            f.write(','.join(map(str, fila)) + '\n')
+
+# Con la biblioteca pickle, guardamos los valores en binario
+def guardar_partida(tablero_orig, tablero_user, intentos, destruidos, faltantes):
+    archivo = 'partida_comenzada.txt'
+    with open(archivo, 'wb') as tx:
+        pickle.dump(intentos, tx)
+        pickle.dump(destruidos, tx)
+        pickle.dump(faltantes, tx)
+        pickle.dump(tablero_orig, tx)
+        pickle.dump(tablero_user, tx)
 
 
 
+# Con la biblioteca pickle, decimos que intente cargar los datos, si no puede que muestre un mensaje de error.
 def cargar_partida():
-    with open('partida_comenzada.txt', 'r') as f:
-        lineas = f.readlines()
-        try:
-            # Leer variables
-            intentos = int(lineas[0].strip())
-            destruidos = int(lineas[1].strip())
-            faltantes = int(lineas[2].strip())
+    try:
+        with open('partida_comenzada.txt', 'rb') as f:
+            intentos = pickle.load(f)
+            destruidos = pickle.load(f)
+            faltantes = pickle.load(f)
+            tablero_orig = pickle.load(f)
+            tablero_user = pickle.load(f)
 
-            # Leer tablero original (líneas 3 a 22)
-            tablero_orig = []
-            for i in range(3, 23):
-                nums = lineas[i].strip().split(',')
-                fila = [int(x) for x in nums]
-                tablero_orig.append(fila)
+        return intentos, destruidos, faltantes, tablero_orig, tablero_user
 
-            # Leer tablero usuario (líneas 23 a 42)
-            tablero_user = []
-            for i in range(23, 43):
-                nums = lineas[i].strip().split(',')
-                fila = [int(x) for x in nums]
-                tablero_user.append(fila)
-
-            # Devolver Resultados en arrays
-            return np.array(tablero_orig), np.array(tablero_user), intentos, destruidos, faltantes
-
-        except:
-            # Si no le nada (partida vacia)
-            return None
+    except (FileNotFoundError):
+        print("No se pudo cargar la partida. Archivo inexistente o corrupto.")

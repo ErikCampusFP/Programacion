@@ -7,19 +7,26 @@ import random
 archivo = "partida_comenzada.txt"
 menu = ["1. Guardar", "2. Salir" ]
 guardado = False
+
+
+
 # Supongamos que el archivo se llama "partida_comenzada.txt"
 
-with open('partida_comenzada.txt', 'r') as f:
-    contenido = f.read()
-    if contenido != '':
-        guardado = True
-    else:
-        guardado = False
+# Este try lo usamops para que si no encuentre el archivo guardado, haga como si estuviese vacio
+try:
+    with open('partida_comenzada.txt', 'rb') as f:
+        contenido = f.read()
+        if contenido:
+            guardado = True
+        else:
+            guardado = False
 
+except FileNotFoundError:
+    guardado = False
 
+# Si existe guardado, usamos los datos almacenados, sino generamos nuevos.
 if guardado == True:
-    partida_guardada = BibliotecaHundirLaFlota.cargar_partida()
-    TableroOriginal, TableroUser, numeroIntentos, trozosDestruidos, trozosFaltantes = partida_guardada
+    numeroIntentos, trozosDestruidos, trozosFaltantes, TableroOriginal, TableroUser = BibliotecaHundirLaFlota.cargar_partida() # Nota: Si lo pongo uno por uno, no funciona
     rprint("Partida cargada desde partida_comenzada.txt")
 else:
 
@@ -54,3 +61,5 @@ rprint("------------------------------------------------------------------------
 
 # Es la función que realiza todo el juego
 BibliotecaHundirLaFlota.juego(TableroOriginal, TableroUser, numeroIntentos, trozosDestruidos, trozosFaltantes, menu, archivo, guardado)
+
+# BibliotecaHundirLaFlota.cargar_partida(TableroOriginal, TableroUser, numeroIntentos, trozosDestruidos, trozosFaltantes)
