@@ -1,0 +1,7 @@
+Lunes: 15
+Martes: 25
+Miercoles: 5
+Jueves: 10
+Viernes: 20
+Sabado: 10
+Domingo: 14
