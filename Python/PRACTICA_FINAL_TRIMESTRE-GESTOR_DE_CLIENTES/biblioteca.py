@@ -96,7 +96,7 @@ def alta_cliente(ArrayClientes):
                 cont = 1
         
         if cont == 1:
-            print("No se permiten letras")
+            print("No se permiten numeros")
             nombre = input("Introduce el nombre del cliente: ")
         else:
             numeroValidoNombre = True
@@ -117,7 +117,7 @@ def alta_cliente(ArrayClientes):
                 cont = 1
         
         if cont == 1:
-            print("No se permiten letras")
+            print("No se permiten numeros")
             apellidos = input("Introduce los apellidos del usuario: ")
         else:
             numeroValidoApellido = True
