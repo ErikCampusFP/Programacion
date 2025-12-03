@@ -198,6 +198,7 @@ def ModificarTelefonoCliente(clientes1):
 
     if a == 0:
         print("Cliente no existente")
+        return clientes1
 
     else:
         while cont2 != True:
@@ -264,11 +265,21 @@ def GuardarClientesFichero(clientes1):
     eleccion = input("Se van a reescribir el archivo .txt, quieres proseguir (s = SI | n = NO): ")
     while eleccion != "s" or eleccion != "n":
         if eleccion == "s":
-            with open('Clientes.txt', 'w') as archivo:
-                for i in clientes1:
-                    archivo.write(f"{i["DNI"]};{i["Nombre"]};{i["Apellidos"]};{i["Telefono"]}\n")
-                print("Clientes Guardados Correctamente")
+
+            lleno = False
+            if len(clientes1) <= 0:
+                lleno = True
+            
+            if lleno == True:
+                print("No se puede guardar, ya que no hay clientes")
                 return
+            else:
+
+                with open('Clientes.txt', 'w') as archivo:
+                    for i in clientes1:
+                        archivo.write(f"{i["DNI"]};{i["Nombre"]};{i["Apellidos"]};{i["Telefono"]}\n")
+                    print("Clientes Guardados Correctamente")
+                    return
             
         # Si se dice que no se cancela
         elif eleccion == "n":
@@ -290,6 +301,7 @@ def Comprobar_Archivos(clientes1):
     eleccion = input("Los datos guardados se van a sobreescribir, quiere proseguir (s = SI | n = NO): ")
     while eleccion != "s" or eleccion != "n":
         if eleccion == "s":
+
             clientes1 = []
             try:
                     with open('Clientes.txt', 'r') as archivo:

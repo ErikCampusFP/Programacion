@@ -6,7 +6,6 @@ from rich import print
 menu = ["1. Alta de Cliente", "2. Listar todos los clientes", "3. Buscar clientes por DNI", "4. Modificar telefono de un cliente", "5. Eliminar Cliente", "6. Guardar cliente en fichero", "7. Cargar clientes desde el fichero", "8. Salir"]
 
 clientes = []
-
 # Desarrollar código
 biblioteca.mostrar_menu(menu)
 eleccion = biblioteca.comprobarMenu()
