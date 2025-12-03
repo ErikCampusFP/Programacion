@@ -353,7 +353,6 @@ def Eliminar_cliente(ArrayClientes):
     if igual == -1:
         print("Cliente no encontrado")
         return ArrayClientes
-
     else:
         ArrayClientes = np.delete(ArrayClientes, igual, axis=0)
         print("Cliente Eliminado Correctamente")
