@@ -359,31 +359,70 @@ def Eliminar_cliente(ArrayClientes):
     
 # Guardamos los clientes en un archivo
 def GuardarClientesFichero(ArrayClientes):
-    with open('Clientes.txt', 'w') as archivo:
-        for Dni, Nombre, Apellidos, Telefono in ArrayClientes:
-            archivo.write(f"{Dni};{Nombre};{Apellidos};{Telefono}\n")
-        print("Clientes Guardados Correctamente")
+
+    eleccion = input("Se van a reescribir el archivo .txt, quieres proseguir (s = SI | n = NO): ")
+    while eleccion != "s" or eleccion != "n":
+        if eleccion == "s":
+
+            vacio = False
+            if ArrayClientes[0,0] == "":
+                vacio = True
+            
+            if vacio == True:
+                print("No se puede guardar debido a que no hay clientes")
+                return
+            else:
+                with open('Clientes.txt', 'w') as archivo:
+                    for Dni, Nombre, Apellidos, Telefono in ArrayClientes:
+                        archivo.write(f"{Dni};{Nombre};{Apellidos};{Telefono}\n")
+                    print("Clientes Guardados Correctamente")
+                    return
+
+        # Si se dice que no se cancela
+        elif eleccion == "n":
+            print("Guardado cancelado")
+            return 
+        
+        # Si la eleccion no es valida, pide que escriba otra vez
+        else:
+            print("Opción no valida")
+            eleccion = input("Se van a reescribir el archivo .txt, quieres proseguir (s = SI | n = NO): ")
 
 
 # Comprobamos si existe el archivo con los clientes
 def Comprobar_Archivos (ArrayClientes):
-    ArrayClientes = []
-    try:
-            with open('Clientes.txt', 'r') as archivo:
-                for linea in archivo:
-                    # Quitamos saltos de línea
-                    linea = linea.strip()  
-                    # Quitamos el punto y coma
-                    linea = linea.split(';') 
-                    # Añadimos los clientes a la lista vacia y la convertimos en numpy
-                    ArrayClientes.append(linea) 
-            ArrayClientes = np.array(ArrayClientes)
-            print("Clientes Recuperados Correctamente")
-            return ArrayClientes
+    
+    # Acceptación de que se van a borrar los registros actuales una vez cargue
+    eleccion = input("Los datos guardados se van a sobreescribir, quiere proseguir (s = SI | n = NO): ")
+    while eleccion != "s" or eleccion != "n":
+        if eleccion == "s":
+            ArrayClientes = []
+            try:
+                    with open('Clientes.txt', 'r') as archivo:
+                        for linea in archivo:
+                            # Quitamos saltos de línea
+                            linea = linea.strip()  
+                            # Quitamos el punto y coma
+                            linea = linea.split(';') 
+                            # Añadimos los clientes a la lista vacia y la convertimos en numpy
+                            ArrayClientes.append(linea) 
+                    ArrayClientes = np.array(ArrayClientes)
+                    print("Clientes Recuperados Correctamente")
+                    return ArrayClientes
 
+                
+            # Si no existe, decimos que no hay clientes almacenados
+            except FileNotFoundError:
+                print("No hay clientes almacenados")
+                ArrayClientes = np.array([['','','','']])
+                return ArrayClientes
+            
+        # Si se dice que no se cancela
+        elif eleccion == "n":
+            print("Carga cancelada")
+            return ArrayClientes
         
-    # Si no existe, decimos que no hay clientes almacenados
-    except FileNotFoundError:
-        print("No hay clientes almacenados")
-        ArrayClientes = np.array([['','','','']])
-        return ArrayClientes
+        # Si la eleccion no es valida, pide que escriba otra vez
+        else:
+            print("Opción no valida")
+            eleccion = input("Los datos guardados se van a sobreescribir, quiere proseguir (s = SI | n = NO): ")
