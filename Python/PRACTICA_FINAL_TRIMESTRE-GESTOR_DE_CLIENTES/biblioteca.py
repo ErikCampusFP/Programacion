@@ -352,6 +352,8 @@ def Eliminar_cliente(ArrayClientes):
     # Si igual es -1, significa que no hay cliente, por lo cual se muestra "Cliente no encontrado", sino mostramos la información de este
     if igual == -1:
         print("Cliente no encontrado")
+        return ArrayClientes
+
     else:
         ArrayClientes = np.delete(ArrayClientes, igual, axis=0)
         print("Cliente Eliminado Correctamente")
