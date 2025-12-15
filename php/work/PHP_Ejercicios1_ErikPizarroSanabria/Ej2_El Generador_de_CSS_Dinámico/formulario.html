@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header></header>
+    <main>
+        <!-- Formulario -->
+        <form action="procesoFormulario.php" method="POST">
+            <label>Color de Fondo</label>
+            <input type="color" name = "fondo"><br><br>
+
+            <label>Tamaño de letra</label>
+            <input type="number" name = "tamañoLetra"><br><br>
+
+            <label>Texto del título</label>
+            <input type="text" name = "texto"><br><br>
+
+            <label>Alineación del texto</label>
+            <select name="alineacion">
+                <option value="center">center</option>
+                <option value="left">left</option>
+                <option value="right">right</option> 
+            </select><br><br>
+
+            <input type="submit" value="Enviar">
+
+        </form>
+    </main>
+    <footer></footer>
+</body>
+</html>
