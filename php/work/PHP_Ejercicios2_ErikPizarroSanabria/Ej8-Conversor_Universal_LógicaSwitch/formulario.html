@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header></header>
+    <main>
+        <!-- Formulario  -->
+        <form action="procesoFormulario.php" method="POST">
+            <label>Cantidad</label>
+            <!-- El min permite dar un valor minimo al input -->
+            <input type="number" name="cantidad" min="1"><br><br>
+
+            <label>Conversión Deseada</label>
+            <select name="metodo">
+                <option value="A">Euros a Dólares</option>
+                <option value="B">Dólares a Euros</option>
+                <option value="C">Metros a Pies</option>
+                <option value="D">Pies a Metros</option>
+            </select><br><br>
+
+            <input type="submit" value="Enviar">
+        </form> 
+    </main>
+    <footer></footer>
+</body>
+</html>
