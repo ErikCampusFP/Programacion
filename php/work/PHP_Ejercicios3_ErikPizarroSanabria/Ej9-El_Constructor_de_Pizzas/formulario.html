@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header></header>
+    <main>
+        <!-- Formulario -->
+        <form action="procesoFormulario.php" method="POST">
+            <label>Tamaño Masa:</label><br>
+            <input type="radio" id="pequeña" name="grosor" value="5">
+            <label for="pequeña">Pequeña: 5€</label><br>
+
+            <input type="radio" id="mediana" name="grosor" value="10">
+            <label for="mediana">Mediana: 10€</label><br><br>
+
+            <!-- Ingredientes con el name = ingredientes[] lo cual los almacena en una lista -->
+            <label>Ingredientes:</label><br>
+            <input type="checkbox" name="ingredientes[]" value="Jamon">
+            <label>Jamon</label><br>
+
+            <input type="checkbox" name="ingredientes[]" value="Queso">
+            <label>Queso</label><br>
+
+            <input type="checkbox" name="ingredientes[]" value="Pepperoni">
+            <label>Pepperoni</label><br>
+
+            <input type="checkbox" name="ingredientes[]" value="Champiñones">
+            <label>Champiñones</label><br>
+
+            <input type="checkbox" name="ingredientes[]" value="Bacon">
+            <label>Bacon</label><br><br>
+
+            <input type="submit" value="Enviar">
+        </form>
+    </main>
+    <footer></footer>
+    
+</body>
+</html>

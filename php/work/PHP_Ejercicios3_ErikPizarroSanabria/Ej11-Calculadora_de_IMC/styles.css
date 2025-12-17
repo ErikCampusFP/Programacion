@@ -1,0 +1,11 @@
+.alerta-roja {
+    color: red;
+}
+
+.alerta-verde {
+    color: green;
+}
+
+.alerta-amarilla {
+    color: rgb(243, 208, 10);
+}
