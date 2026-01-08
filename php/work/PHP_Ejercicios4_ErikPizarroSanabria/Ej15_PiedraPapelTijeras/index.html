@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Generamos el formulario -->
+    <form action="procesoFormulario.php" method="POST">
+        <label for="">Introduce tu elección:</label><br>
+
+        <input type="radio" id="piedra" name="eleccion" value="piedra" required>
+        <label for="piedra">Piedra 🪨</label><br>
+
+        <input type="radio" id="papel" name="eleccion" value="papel" required>
+        <label for="papel">Papel 📄</label><br>
+
+        <input type="radio" id="tijeras" name="eleccion" value="tijeras" required>
+        <label for="tijeras">Tijeras ✂️</label><br><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
