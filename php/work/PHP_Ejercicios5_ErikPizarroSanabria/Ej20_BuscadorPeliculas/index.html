@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Generamos el formulario -->
+    <form action="procesoFormulario.php" method="POST">
+        <label for="">Selecciona el Genero a Buscar</label>
+
+        <!-- Utilizamos el select para que le aparezcan las opciones disponibles -->
+        <select name="genero" id="genero" required>
+            <option value="accion">Acción</option>
+            <option value="comedia">Comedia</option>
+        </select><br><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
