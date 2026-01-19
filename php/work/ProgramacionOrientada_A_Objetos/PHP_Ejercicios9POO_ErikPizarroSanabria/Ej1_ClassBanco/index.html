@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="main.php" method="POST">
+        <label for="">Introduce que quieres hacer</label><br>
+        <input type="radio" name="opcion" value="sacar" required>
+        <label for="sacar">Retirar Dinero</label><br>
+
+        <input type="radio" name="opcion" value="meter">
+        <label for="meter">Introducir Dinero</label><br><br>
+
+        <label for="">Introduce la Cantidad</label>
+        <input type="number" min="1" required><br><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
