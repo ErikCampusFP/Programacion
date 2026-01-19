@@ -9,11 +9,13 @@ class CuentaBancaria{
     // Generamos el método depositar
     public function depositar($cantidadDeposito){
         $this->saldo = $this->saldo + $cantidadDeposito;
+        echo "Se ha ingresado correctamente". "<br>";
     }
     
     // Generamos el metodo retirar
     public function retirar($cantidadRetiro){
-        $this->saldo = $this->saldo + $cantidadRetiro;
+        $this->saldo = $this->saldo - $cantidadRetiro;
+        echo "Se ha retidaro exitosamente". "<br>";
     }
 
     // Generamos el metodo mostrarInfo

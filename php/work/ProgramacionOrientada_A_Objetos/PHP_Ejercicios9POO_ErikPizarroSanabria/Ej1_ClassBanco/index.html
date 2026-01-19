@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- Generamos el formulario -->
     <form action="main.php" method="POST">
         <label for="">Introduce que quieres hacer</label><br>
         <input type="radio" name="opcion" value="sacar" required>
@@ -15,7 +16,7 @@
         <label for="meter">Introducir Dinero</label><br><br>
 
         <label for="">Introduce la Cantidad</label>
-        <input type="number" min="1" required><br><br>
+        <input type="number" min="1" name="cantidad" required><br><br>
 
         <input type="submit" value="Enviar">
     </form>
