@@ -1,0 +1,9 @@
+2026-01-31 19:15:57|GUARDAR|El nombre del alumno debe de tener al menos 3 caracteres
+2026-01-31 19:16:49|GUARDAR|El nombre del alumno debe de tener como maximo 40 caracteres
+2026-01-31 19:17:26|LISTAR|La asistencia solo puede ser SI o NO
+2026-01-31 19:18:04|LISTAR|Linea corrupta en tareas.txt: 1769883350|Víctor|2026-01-31 19:15:50NO
+
+2026-01-31 19:34:10|LISTAR|Linea corrupta en tareas.txt: 1769883350|Víctor|2026-01-31 19:15:50NO
+
+2026-01-31 19:34:12|LISTAR|Linea corrupta en tareas.txt: 1769883350|Víctor|2026-01-31 19:15:50NO
+
