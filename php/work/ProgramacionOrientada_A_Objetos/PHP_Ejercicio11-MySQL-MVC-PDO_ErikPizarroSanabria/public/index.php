@@ -41,5 +41,4 @@ switch($accion){
     default:
         echo "Acción no valida";
 }
-
 ?>
