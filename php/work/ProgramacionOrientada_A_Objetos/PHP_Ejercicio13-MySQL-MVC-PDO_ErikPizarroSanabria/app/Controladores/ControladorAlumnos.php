@@ -1,5 +1,4 @@
 <?php
-// app/Controladores/ControladorAlunnos.php
 
 // Añadimos las conexiones
 require_once __DIR__ .'/../Modelos/RepositorioAlumnos.php';
@@ -28,26 +27,6 @@ class ControladorAlumnos{
     }
 
 
-    // VALIDACIONES
-    function validar($nombre, $email, $edad){
-        if(strlen($nombre) < 3){
-            throw new Exception("El nombre debe de tener al menos 3 caracteres");
-        }
-
-        // email opcional, pero si existe debe de ser valido
-        if ($email !== '' && !filter_var($email, FILTER_VALIDATE_EMAIL)){
-            throw new Exception("El email no es valido");
-        }
-
-        if ($edad === '' || !ctype_digit($edad)){
-            throw new Exception("La edad debe ser un nunmero");
-        }
-
-        $edadNum = (int)$edad;
-        if ($edadNum <1 || $edadNum > 120){
-            throw new Exception("La edad debe de estar entre 1 y 120");
-        }
-    }
 
     // RENDERIZAR (layout + vista)
     function renderizar ($vista, $datos = []){

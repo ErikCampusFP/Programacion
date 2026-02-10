@@ -1,6 +1,4 @@
-Modelo básico.
 <?php
-
 class Alumno
 {
   public $id;

@@ -1,7 +1,3 @@
-<?php
-// app/Vistas/alumnos/listar
-?>
-
 <?php if (!empty($error)): ?>
   <div class="error"><?php echo htmlspecialchars($error); ?></div>
 <?php endif; ?>

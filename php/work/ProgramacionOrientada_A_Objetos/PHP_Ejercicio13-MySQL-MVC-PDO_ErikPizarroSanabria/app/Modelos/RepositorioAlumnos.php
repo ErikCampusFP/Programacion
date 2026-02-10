@@ -1,5 +1,4 @@
 <?php
-// app/Modelos/RepositorioAlumnos.php
 
 // Añadimos las conexiones
 require_once __DIR__ .'/ConexionBD.php';
@@ -38,7 +37,5 @@ class RepositorioAlumnos{
         }
         return $alumnos;
     }
-
-
 }
 ?>
