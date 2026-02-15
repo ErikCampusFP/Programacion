@@ -1,2 +1,2 @@
-2026-02-14 20:47:48 | GUARDAR | SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
-2026-02-14 20:48:01 | GUARDAR | SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+2026-02-15 21:43:34 | GUARDAR | El nombre debe de tener al menos 3 caracteres
+2026-02-15 21:44:32 | GUARDAR | La edad debe de ser un numero entero
