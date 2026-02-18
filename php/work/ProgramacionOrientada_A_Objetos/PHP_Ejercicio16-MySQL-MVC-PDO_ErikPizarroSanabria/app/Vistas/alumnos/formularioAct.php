@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- app/Vistas/alumno/formularioAct.php -->
     <meta charset="UTF-8">
     <title>Editar Alumno</title>
-    <!-- Bootstrap CSS -->
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-light">
@@ -40,10 +41,8 @@
         </div>
 
         <button type="submit" class="btn btn-success">Guardar</button>
-        <a href="index.php?accion=actualizar" class="btn btn-secondary">Volver</a>
+        <a href="index.php?accion=listar" class="btn btn-secondary">Volver</a>
     </form>
-
 </div>
-
 </body>
 </html>

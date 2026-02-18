@@ -22,6 +22,5 @@
 <?php
 require $vistaContenido;
 ?>
-
 </body>
 </html>
