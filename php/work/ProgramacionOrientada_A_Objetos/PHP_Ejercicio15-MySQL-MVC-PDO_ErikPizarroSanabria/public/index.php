@@ -10,7 +10,7 @@ require_once '../app/controladores/ControladorAlumnos.php';
 
 // Iniciamos controlador
 $controlador = new ControladorAlumnos();
-$accion = $_GET['accion'] ?? 'crear';
+$accion = $_GET['accion'] ?? 'listar';
 
 // Iniciamos el switch case
 switch ($accion){

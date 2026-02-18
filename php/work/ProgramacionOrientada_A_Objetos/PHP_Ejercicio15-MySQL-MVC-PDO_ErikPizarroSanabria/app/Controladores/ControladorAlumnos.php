@@ -67,11 +67,11 @@ class ControladorAlumnos{
 
     header("Location: index.php?accion=borrado");
     exit;
-}
+    }
 
-// Creamos la función borrado
-function borrado(){
-    $this->renderizar('alumnos/eliminado');
-}
+    // Creamos la función borrado
+    function borrado(){
+        $this->renderizar('alumnos/eliminado');
+    }
 }
 ?>
