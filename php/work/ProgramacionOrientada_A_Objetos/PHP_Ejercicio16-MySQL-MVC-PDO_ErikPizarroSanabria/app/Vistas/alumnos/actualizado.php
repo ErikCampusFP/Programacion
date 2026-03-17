@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- app/Vistas/alumno/eliminado.php -->
+    <!-- app/Vistas/alumno/actualizado.php -->
     <meta charset="UTF-8">
     <title>Alumnos</title>
     <!-- Bootstrap -->
