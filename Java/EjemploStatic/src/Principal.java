@@ -1,0 +1,19 @@
+
+public class Principal {
+	static final int X = 25;
+	
+	public static void main(String[] args) {
+		 int x=54;
+		System.out.println(x);
+		System.out.println(Math.PI);
+		Math.random();
+		saluda();
+
+	}
+	
+	public static void saluda() {
+		System.out.println("Hola");
+		System.out.println(X);
+	}
+
+}

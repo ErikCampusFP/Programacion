@@ -1,0 +1,51 @@
+import java.util.Scanner;
+public class EjercicioCadenas {
+
+	public static void main(String[] args) {
+		
+		Scanner lector = new Scanner (System.in);
+
+		// Ejercicio 1 - Longitud de la cadena
+		System.out.println("Escribe una frase: ");
+		
+		String frase = "Buenas Noches A Todos";
+		
+		int longitudFrase = frase.length();
+		System.out.println(frase);
+		System.out.println("La longitud de la frase es de: " + longitudFrase);
+		
+		System.out.println("------------------------------------------------");
+		
+		// Ejercicio 2 - Acceso a caracteres
+		System.out.println(frase.charAt(0)); // Primer caracter
+		
+		longitudFrase = frase.length() - 1;
+		System.out.println(frase.charAt(longitudFrase)); // Ultimo caracter
+		
+		System.out.println(frase.charAt(4)); // 5 caracter
+		
+		// Ejercicio 3 - Búsqueda de texto
+		boolean contiene = frase.contains("Noches");
+		
+		if(contiene == false) {
+			System.out.println("La frase no posee la palabra concreta");
+		} else {
+			System.out.println("Su primera aparición es la siguiente: " + frase.indexOf(frase));
+		}
+		
+		String texto = "hola mundo hola amigos";
+		String palabra = "hola";
+
+		int primera = texto.indexOf(palabra);
+		int ultima = texto.lastIndexOf(palabra);
+
+		System.out.println("Primera aparición: " + primera);
+		System.out.println("Última aparición: " + ultima);
+		
+		
+		
+		
+		lector.close();
+	}
+
+}

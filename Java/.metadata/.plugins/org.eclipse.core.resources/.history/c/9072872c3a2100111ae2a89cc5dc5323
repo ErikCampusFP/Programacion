@@ -1,0 +1,13 @@
+import Prueba.Alumno;
+import Prueba.Persona;
+import Prueba.Profesor;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		Persona p1 = new Persona ("Pepe", "617788992");
+		Alumno p2 = new Alumno("Alicia", "699876271", 54);
+		Persona p3 = new Profesor("Lucas", "612349294", "Matematicas");
+	}
+
+}

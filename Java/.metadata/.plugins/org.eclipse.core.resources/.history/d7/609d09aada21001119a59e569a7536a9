@@ -1,0 +1,29 @@
+import java.util.ArrayList;
+public class Main {
+
+	public static void main(String[] args) {
+		
+        ArrayList<Object> instrumentos = new ArrayList<>();
+		
+		instrumentos.add(new Guitarra());
+        instrumentos.add(new Piano());
+        instrumentos.add(new Violin());
+		
+        for(int contador = 0; contador < instrumentos.size(); contador++) { //.size saca la longitud del array
+            
+        	if (instrumentos.get(contador) instanceof Guitarra) { // instrumentos.get(contador) instanceof Guitarra -> Esto sirve para buscar si el objeto en el que se encuentra es en este caso la guitarra
+            	Guitarra.tocar();
+        		System.out.println("Puede ser acustica o électrica" + "\n");
+            	
+            } else if (instrumentos.get(contador) instanceof Piano){
+            	Piano.tocar();
+            	System.out.println("Requiere afinación frecuente");
+            } else if (instrumentos.get(contador) instanceof Violin){
+            	Violin.tocar();
+            	System.out.println("Se toca con arco o pizzicato.");
+            }
+        }
+		
+	}
+
+}

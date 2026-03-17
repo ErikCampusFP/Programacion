@@ -1,0 +1,15 @@
+import banca.Cliente;
+import banca.Cuenta;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		Cliente cli = new Cliente("57899223A", "Erik", "González");
+		Cuenta miCuenta = new Cuenta(cli, "ES458394348385959", 100);
+		
+		String opcion = "";
+		do {
+			
+		} while (!opcion.equals("4"));}
+
+}

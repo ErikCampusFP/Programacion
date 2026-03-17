@@ -1,0 +1,15 @@
+import java.util.ArrayList;
+public class Main {
+
+	public static void main(String[] args) {
+		
+		ArrayList<String> instrumentos = new ArrayList<String>();
+		instrumentos.add = new Guitarra();
+		instrumentos.add = new Piano();
+		instrumentos.add = new Violin();
+		
+		for(int contador = 0; contador < array )
+		
+	}
+
+}

@@ -1,0 +1,16 @@
+import java.util.Scanner;
+public class EjercicioCadenas {
+
+	public static void main(String[] args) {
+		
+		Scanner lector = new Scanner (System.in);
+
+		// Ejercicio 1 - Longitud de la cadena
+		System.out.println("Escribe una frase: ");
+		
+		String longitudFrase = "";
+		longitudFrase = lector.next();
+
+	}
+
+}

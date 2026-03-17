@@ -1,0 +1,18 @@
+
+public class Principal {
+	static final int X = 25;
+	
+	public static void main(String[] args) {
+		 int x=54;
+		System.out.println(x);
+		saluda();
+
+	}
+	
+	public static void saluda() {
+		X=X+5;
+		System.out.println("Hola");
+		System.out.println(x);
+	}
+
+}

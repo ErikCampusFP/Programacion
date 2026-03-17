@@ -1,0 +1,26 @@
+import Prueba.Alumno;
+import Prueba.Persona;
+import Prueba.Profesor;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		Persona p1 = new Persona ("Pepe", "617788992");
+		Alumno p2 = new Alumno("Alicia", "699876271", 44);
+		Persona p3 = new Profesor("Lucas", "612349294", "Matematicas");
+		
+		System.out.println(p1);
+		System.out.println(p2);
+		System.out.println(p3);
+		
+		Persona[] equipo = new Persona[4];
+		equipo[0] = new Alumno("Rosa", "91777777", 54);
+		equipo[1] = new Profesor("Lucas", "91887777", "Ingles");
+		equipo[2] = new Alumno("Miguel", "91724677", 24);
+		equipo[3] = new Persona("Pedro", "91724677");
+
+		Object [] cosas = new Object[200];
+		
+	}
+
+}

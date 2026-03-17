@@ -1,0 +1,114 @@
+import java.util.Scanner;
+public class EjercicioCadenas {
+
+	public static void main(String[] args) {
+		
+		Scanner lector = new Scanner (System.in);
+
+		// Ejercicio 1 - Longitud de la cadena
+		System.out.println("Ejercicio 1 - Longitud de la cadena");
+		System.out.println("  ");
+			
+		String frase = "Buenas Noches A Todos";
+		
+		int longitudFrase = frase.length();
+		System.out.println(frase);
+		System.out.println("La longitud de la frase es de: " + longitudFrase);
+		
+		System.out.println("------------------------------------------------");
+		System.out.println("  ");
+
+		// Ejercicio 2 - Acceso a caracteres
+		System.out.println("Ejercicio 2 - Acceso a caracteres");
+		System.out.println("  ");
+		
+		System.out.println("Primer caracter: " + frase.charAt(0)); // Primer caracter
+		
+		longitudFrase = frase.length() - 1;
+		System.out.println("Ultimo caracter: " + frase.charAt(longitudFrase)); // Ultimo caracter
+		
+		System.out.println("5 caracter: " + frase.charAt(4)); // 5 caracter
+		
+		System.out.println("------------------------------------------------");
+		System.out.println("  ");
+
+		// Ejercicio 3 - Búsqueda de texto
+		System.out.println("Ejercicio 3 - Búsqueda de texto");
+		System.out.println("  ");
+		
+		boolean contiene = frase.contains("Noches");
+		
+		if(contiene == false) {
+			System.out.println("La frase no posee la palabra concreta");
+		} else {
+			System.out.println("Su primera aparición es la siguiente: " + frase.indexOf("Noches"));
+			System.out.println("Su ultima aparición es la siguiente: " + frase.lastIndexOf("Noches"));
+
+		}
+		System.out.println("------------------------------------------------");
+		System.out.println("  ");
+
+		
+		// Ejercicio 4 - Comparación de cadenas
+		System.out.println("Ejercicio 4 - Comparación de cadenas");
+		System.out.println("  ");
+		
+		String frase1 = "Hola";
+		String frase2 = "hola";
+		
+		System.out.println("Son exactamente iguales: " + frase1.equals(frase2));
+		System.out.println("Son iguales ignorando máyusculas y minúsculas: " + frase1.equalsIgnoreCase(frase2));
+		
+		int resultado = frase1.compareTo(frase2);
+
+		if (resultado < 0) {
+		    System.out.println(frase1 + " va antes que " + frase2);
+		} else if (resultado > 0) {
+		    System.out.println(frase1 + " va después que " + frase2);
+		} else {
+		    System.out.println("Ambas cadenas son iguales");
+		}
+		
+		System.out.println("------------------------------------------------");
+		System.out.println("  ");
+		
+		
+		
+		// Ejercicio 5 – Extracción de partes de una cadena
+		System.out.println("Ejercicio 5 – Extracción de partes de una cadena");
+		System.out.println("  ");
+		
+		System.out.println("Los primeros 5 digitos son los siguientes: " + frase.substring(0,5));
+		System.out.println("Los digitos desde el 3 hasta el 8 son los siguientes: " + frase.substring(3,8)); 
+		System.out.println("Los digitos desde el 5 hasta el final son los siguientes: " + frase.substring(5,longitudFrase)); 
+
+		System.out.println("------------------------------------------------");
+		System.out.println("  ");
+		
+		
+		// Ejercicio 6 - Conversión de texto
+		System.out.println("Ejercicio 6 - Conversión de texto");
+		System.out.println("  ");
+		
+		System.out.println("El texto en mayusculas: " + frase.toUpperCase());
+		System.out.println("El texto en minusculas: " + frase.toLowerCase());
+		System.out.println("El texto sin espacios al principio ni al final: " + frase.trim());
+		
+		System.out.println("------------------------------------------------");
+		System.out.println("  ");
+		
+		
+		// Ejercicio 7 – Reemplazo de texto
+		System.out.println("Ejercicio 7 – Reemplazo de texto");
+		System.out.println("  ");
+		
+		System.out.println("Sustuimos Buenas por Hola: " + frase.replace("Buenas", "Hola"));
+		
+		
+		
+		
+		
+		lector.close();
+	}
+
+}

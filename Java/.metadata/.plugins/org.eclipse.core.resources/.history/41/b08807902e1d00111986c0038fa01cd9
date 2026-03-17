@@ -1,0 +1,10 @@
+
+public class Principal {
+
+	public static void main(String[] args) {
+		Gato miGato = new Gato("Persa", 3, 4, 2018, 14);
+		System.out.println(miGato.estado());
+
+	}
+
+}

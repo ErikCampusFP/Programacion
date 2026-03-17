@@ -1,0 +1,7 @@
+
+public class InstrumentoMusical {
+	
+	public static void tocar() {
+		System.out.println("Se ha tocado el instrumento correctamente");
+	}
+}

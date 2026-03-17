@@ -1,0 +1,15 @@
+
+public class Principal {
+    public static void main(String[] args) {
+        Motor miMotor = new Motor(100, 1);
+        Coche miCoche = new Coche("5568FJK", "Ford", "Fiesta", miMotor);
+
+        System.out.println(miCoche.estado());
+
+        // Eliminamos la referencia al coche
+        miCoche = null;
+
+        // El objeto Motor sigue existiendo porque todavía hay referencia
+        System.out.println("El objeto motor sigue activo con caballos " + miMotor.getCaballos());
+    }
+}

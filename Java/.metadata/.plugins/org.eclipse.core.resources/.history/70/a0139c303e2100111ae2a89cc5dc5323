@@ -1,0 +1,18 @@
+import java.util.ArrayList;
+public class Main {
+
+	public static void main(String[] args) {
+		
+        ArrayList<Object> instrumentos = new ArrayList<>();
+		
+		instrumentos.add(new Guitarra());
+        instrumentos.add(new Piano());
+        instrumentos.add(new Violin());
+		
+        for(int contador = 0; contador < instrumentos.size(); contador++) { //.size saca la longitud del array
+            System.out.println(instrumentos.get(contador));
+        }
+		
+	}
+
+}

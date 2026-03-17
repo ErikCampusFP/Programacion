@@ -1,0 +1,66 @@
+import java.util.Scanner;
+
+import banca.Cliente;
+import banca.Cuenta;
+
+public class Principal {
+	public static void main(String[] args) {
+		Cliente cli=new Cliente
+			("57899223A","Amelia","González", "617778899",
+			 "C/ Oca, 45");
+		Cuenta miCuenta =  new Cuenta(cli, "ES45839438385959",100);
+		String opcion="";
+		Scanner lector = new Scanner(System.in);
+		do {
+		    System.out.println("===== MENÚ BANCO =====");
+		    System.out.println("1. Ingresar dinero");
+		    System.out.println("2. Retirar");
+		    System.out.println("3. Ver información cuenta");
+		    System.out.println("4. Salir del programa");
+		    System.out.print("Seleccione una opción: ");
+
+		    opcion = lector.nextLine();
+
+		    switch (opcion) {
+
+		        case "1":
+		            System.out.println("Has seleccionado: Ingresar dinero");
+		            System.out.println("¿Cuanto dinero quieres ingresar?");
+		            
+		            double ingreso = lector.nextDouble();
+		            double saldo1 = miCuenta.ingresar(ingreso);
+		            lector.nextLine(); // Se pone siempre un lector.nextLine() despues de un nextDouble para limpiar el buffer del teclado
+		            
+		            System.out.println("Saldo después del ingreso: "+saldo1);
+		            break;
+
+		        case "2":
+		            System.out.println("Has seleccionado: Retirar dinero");
+		            System.out.println("¿Cuanto dinero quieres retirar?");
+		            
+		            double ingreso2 = lector.nextDouble();
+		            double saldo2 = miCuenta.retirar(ingreso2);
+		            lector.nextLine();
+		            
+		            System.out.println("Saldo después del ingreso: "+saldo2);
+		            break;
+
+		        case "3":
+		            System.out.println("Mostrando información de la cuenta");
+		            System.out.println(miCuenta.toString());
+		            break;
+
+		        case "4":
+		            System.out.println("Saliendo del programa...");
+		            break;
+
+		        default:
+		            System.out.println("Opción no válida");
+		    }
+
+		    System.out.println();
+
+		} while (!opcion.equals("4"));
+		lector.close();
+	}
+}
