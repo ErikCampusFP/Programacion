@@ -1,0 +1,136 @@
+package sala.teatro;
+import java.util.Arrays;
+
+public class Teatro {
+	private String direccion;
+	private Cliente[][] butacas;
+	private Obra obra;
+	
+	public Teatro(String direccion, Obra obra) {
+		super();
+		this.direccion = direccion;
+		this.obra = obra;
+		this.butacas = new Cliente[5][10];
+	}
+
+	public String getDireccion() {
+		return direccion;
+	}
+
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+
+	public Cliente[][] getButacas() {
+		return butacas;
+	}
+
+	public void setButacas(Cliente[][] butacas) {
+		this.butacas = butacas;
+	}
+
+	public Obra getObra() {
+		return obra;
+	}
+
+	public void setObra(Obra obra) {
+		this.obra = obra;
+	}
+
+	@Override
+	public String toString() {
+		return "Dirección Teatro: " + direccion + "Obra Representada: " + obra;
+	}
+	
+	public boolean reservarButaca (int fila, int butaca, Cliente cli) {
+		if(butacas[fila][butaca] == null) {
+			butacas[fila][butaca] = cli;
+			System.out.println("Se ha reservado correcto");
+			return true;
+		}else {
+			System.out.println("No se ha podido reservar, ya que la butaca se encuentra reservada");
+			return false;
+		}
+
+	}
+	
+	
+	public boolean eliminarreservarButaca (int fila, int butaca, Cliente cli) {
+		if(butacas[fila][butaca] == null) {
+			System.out.println("No existe ninguna reserva para este lugar");
+			return false;
+		}else {
+			butacas[fila][butaca] = null;
+			System.out.println("Se ha eliminado correctamente la reserva");
+			return true;
+		}
+
+	}
+	
+	public String verButacas() {
+		String resultado = "";
+		
+        for (int cont1 = 0; cont1 < butacas.length; cont1++) {
+            for (int cont2 = 0; cont2 < butacas[cont1].length; cont2++) {
+
+                if (butacas[cont1][cont2] == null) {
+                    resultado += "[Vacia] ";
+                    
+                } else {
+                    resultado += "[" + butacas[cont1][cont2].getNombre() + " - " 
+                                       + butacas[cont1][cont2].getDni() + "] ";
+                }
+            }
+            resultado += "\n"; // Salto de linea para que se vea mejor
+        }
+
+        return resultado;
+    }
+	
+	public String verButacasVacias() {
+		String resultado = "";
+		
+        for (int cont1 = 0; cont1 < butacas.length; cont1++) {
+            for (int cont2 = 0; cont2 < butacas[cont1].length; cont2++) {
+
+                if (butacas[cont1][cont2] == null) {
+                    resultado += "[Vacia] ";
+                    
+                }
+            }
+            resultado += "\n"; // Salto de linea para que se vea mejor
+        }
+
+        return resultado;
+
+
+}
+	
+	
+	
+	public String verButacasLlenas() {
+		String resultado = "";
+		
+        for (int cont1 = 0; cont1 < butacas.length; cont1++) {
+            for (int cont2 = 0; cont2 < butacas[cont1].length; cont2++) {
+
+               if (butacas[cont1][cont2] != null) {
+                    resultado += "[" + "Butaca: " + cont1 + "-" + cont2 + " " + " | " + butacas[cont1][cont2].getNombre() + " - " 
+                                       + butacas[cont1][cont2].getDni() + "] " + "\n";
+                }
+            }
+        }
+        
+        if(resultado.length() == 0) {
+        	return "0";
+        	
+        } else {
+            return resultado;
+
+        }
+        
+    }
+	
+}
+
+

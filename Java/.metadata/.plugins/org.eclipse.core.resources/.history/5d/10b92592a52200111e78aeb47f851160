@@ -1,0 +1,10 @@
+import sala.teatro.Cliente;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Cliente paco = new Cliente("45628142", "Paco", 6752462184);
+		
+	}
+
+}

@@ -1,0 +1,11 @@
+package sala.teatro;
+
+public class Cliente {
+	private String dni;
+	private String nombre;
+	private String apellido;
+	private String tlf;
+	private String domicilio;
+	
+	
+}

@@ -1,0 +1,9 @@
+
+public class Teatro {
+	private String direccion;
+	private String butacas[][];
+	
+
+
+	
+}

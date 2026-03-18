@@ -1,0 +1,58 @@
+import sala.teatro.Cliente;
+import sala.teatro.Obra;
+import java.util.Scanner;
+
+public class Main {
+
+
+	public static void main(String[] args) {
+		Scanner lector = new Scanner (System.in);
+
+		
+		Cliente paco = new Cliente("45628142", "Paco", "6752462184");
+		System.out.println(paco.toString());
+		
+		Obra obra1 = new Obra("Obra1", "Misterio", "12:00 - 21:00", "14:00", "CRJ");
+		System.out.println(obra1.toString());
+		
+		String eleccion = "";
+		
+		do {
+				System.out.println("Escribe una frase: ");
+				eleccion = lector.next();
+				
+				switch (eleccion) {
+				
+				case "1":
+					System.out.println(1);
+					break;
+				
+				case "2":
+					System.out.println(2);
+					break;
+					
+				case "3":
+					System.out.println(3);
+					break;
+					
+				case "4":
+					System.out.println(4);
+					break;
+					
+				case "5":
+					System.out.println(5);
+					break;
+					
+				case "6":
+					System.out.println(6);
+					break;
+				
+			} 
+		} while (eleccion != "7"); {
+			System.out.println("Hasta luego");
+		}
+		
+		lector.close();
+	}
+
+}

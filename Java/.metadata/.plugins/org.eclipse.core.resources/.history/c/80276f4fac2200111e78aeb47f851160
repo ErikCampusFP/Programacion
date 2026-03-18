@@ -1,0 +1,26 @@
+package sala.teatro;
+
+public class Teatro {
+	private String direccion;
+	private Cliente[][] butacas;
+	private Obra obra;
+	
+	public Teatro(String direccion, Obra obra) {
+		super();
+		this.direccion = direccion;
+		this.obra = obra;
+		this.butacas = new Cliente[5][10];
+	}
+	
+	
+	
+	
+	
+	
+
+	
+	
+
+
+	
+}

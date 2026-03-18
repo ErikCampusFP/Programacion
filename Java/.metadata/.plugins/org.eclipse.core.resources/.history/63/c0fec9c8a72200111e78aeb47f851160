@@ -1,0 +1,80 @@
+package sala.teatro;
+
+public class Obra {
+	private String nombre;
+	private String autor;
+	private int duracion;
+	private String hora_inicio;
+	private int sala;
+	
+	
+	public Obra(String nombre, String autor, int duracion, String hora_inicio, int sala) {
+		super();
+		this.nombre = nombre;
+		this.autor = autor;
+		this.duracion = duracion;
+		this.hora_inicio = hora_inicio;
+		this.sala = sala;
+	}
+
+
+	public String getNombre() {
+		return nombre;
+	}
+
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+
+	public String getAutor() {
+		return autor;
+	}
+
+
+	public void setAutor(String autor) {
+		this.autor = autor;
+	}
+
+
+	public int getDuracion() {
+		return duracion;
+	}
+
+
+	public void setDuracion(int duracion) {
+		this.duracion = duracion;
+	}
+
+
+	public String getHora_inicio() {
+		return hora_inicio;
+	}
+
+
+	public void setHora_inicio(String hora_inicio) {
+		this.hora_inicio = hora_inicio;
+	}
+
+
+	public int getSala() {
+		return sala;
+	}
+
+
+	public void setSala(int sala) {
+		this.sala = sala;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Obra [nombre=" + nombre + ", autor=" + autor + ", duracion=" + duracion + ", hora_inicio=" + hora_inicio
+				+ ", sala=" + sala + "]";
+	}
+	
+	
+	
+	
+}

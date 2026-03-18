@@ -1,0 +1,60 @@
+package sala.teatro;
+
+import java.util.Arrays;
+
+public class Teatro {
+	private String direccion;
+	private String butacas[][];
+	private Obra obra;
+	
+	
+	public Teatro(String direccion, String[][] butacas, Obra obra) {
+		super();
+		this.direccion = direccion;
+		this.butacas = butacas;
+		this.obra = obra;
+	}
+
+
+	public String getDireccion() {
+		return direccion;
+	}
+
+
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+
+
+	public String[][] getButacas() {
+		return butacas;
+	}
+
+
+	public void setButacas(String[][] butacas) {
+		this.butacas = butacas;
+	}
+
+
+	public Obra getObra() {
+		return obra;
+	}
+
+
+	public void setObra(Obra obra) {
+		this.obra = obra;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Teatro [direccion=" + direccion + ", butacas=" + Arrays.toString(butacas) + ", obra=" + obra + "]";
+	}
+	
+	
+	
+	
+
+
+	
+}

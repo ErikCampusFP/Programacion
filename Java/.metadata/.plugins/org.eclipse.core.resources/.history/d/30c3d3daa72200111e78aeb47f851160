@@ -1,0 +1,10 @@
+package sala.teatro;
+
+public class Obra {
+	private String nombre;
+	private String genero;
+	private String horario;
+	private String hora_inicio;
+	private String cia;
+	
+	
