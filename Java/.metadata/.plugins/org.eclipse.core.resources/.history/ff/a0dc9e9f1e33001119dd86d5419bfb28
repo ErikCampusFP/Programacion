@@ -1,0 +1,33 @@
+import java.io.FileReader;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		Scanner lector = new Scanner(System.in);
+		int dividendo;
+		int divisor;
+		int division; 
+		
+		try {
+			System.out.println("Introduce dividendo: ");
+			dividendo = lector.nextInt();
+			System.out.println("Introduce divisor: ");
+			divisor = lector.nextInt();
+			division = dividendo / divisor;
+			System.out.println("Resultado: "+division);			
+		} catch (ArithmeticException e) {
+			System.err.println("Ha ocurrido una excepción");
+			System.err.println(e.getMessage());
+		} catch (InputMismatchException e2) {
+			System.err.println("Ha ocurrido una excepción de conversión");
+		}
+		System.out.println("Hasta pronto");
+
+		lector.close();
+		// FileReader fichero = new FileReader("c:/datos.txt");
+		// System.out.println("El fichero ha sido abierto");
+	}
+
+}

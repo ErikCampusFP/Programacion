@@ -55,7 +55,7 @@ public class Teatro {
 	}
 	
 	
-	public boolean eliminarreservarButaca (int fila, int butaca, Cliente cli) {
+	public boolean eliminarreservarButaca (int fila, int butaca) {
 		if(butacas[fila][butaca] == null) {
 			System.out.println("No existe ninguna reserva para este lugar");
 			return false;
@@ -94,7 +94,7 @@ public class Teatro {
             for (int cont2 = 0; cont2 < butacas[cont1].length; cont2++) {
 
                 if (butacas[cont1][cont2] == null) {
-                    resultado += "[Vacia] ";
+                    resultado += "[" + cont1 + "-" + cont2 + "] ";
                     
                 }
             }

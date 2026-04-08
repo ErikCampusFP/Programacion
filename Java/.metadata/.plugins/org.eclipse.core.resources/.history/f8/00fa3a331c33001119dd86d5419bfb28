@@ -1,0 +1,16 @@
+import java.io.FileReader;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		int dividendo = 7;
+		int divisor = 3;
+		int division = dividendo / divisor;
+		System.out.println("Resultado: "+division);
+		
+		
+		FileReader fichero = new FileReader("c:/datos.txt");
+		System.out.println("El fichero ha sido abierto");
+	}
+
+}

@@ -1,0 +1,56 @@
+import java.io.FileReader;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+import java.io.FileNotFoundException;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		llamada1();
+	}
+
+	public static void llamada1() {
+		llamada2();
+	}
+	
+	public static void llamada2() {
+		llamada3();
+	}
+	
+	public static void llamada3() {
+		FileReader fichero = new FileReader("c:/datos.txt");
+		System.out.println("El fichero ha sido abierto");
+	}
+
+		
+		
+		/*
+		Scanner lector = new Scanner(System.in);
+		int dividendo;
+		int divisor;
+		int division; 
+		
+		try {
+			System.out.println("Introduce dividendo: ");
+			dividendo = lector.nextInt();
+			System.out.println("Introduce divisor: ");
+			divisor = lector.nextInt();
+			division = dividendo / divisor;
+			System.out.println("Resultado: "+division);			
+		} catch (ArithmeticException | InputMismatchException e) {
+			System.err.println("Ha ocurrido una excepción");
+			System.err.println(e.getMessage());
+			System.out.println("Tipo de excepción: " + e.getClass().getName());
+		} catch (Exception e) {
+			System.out.println("Ha ocurrido otro tipo de excepción");
+		} finally {
+			System.out.println("Esto se ejecuta sí o sí");
+		}
+		System.out.println("Hasta pronto");
+
+		lector.close();
+		*/
+
+	}
+
+}

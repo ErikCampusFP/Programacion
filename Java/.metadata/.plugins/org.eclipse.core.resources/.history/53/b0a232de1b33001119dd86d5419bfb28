@@ -1,0 +1,12 @@
+
+public class Principal {
+
+	public static void main(String[] args) {
+		int dividendo = 7;
+		int divisor = 3;
+		int division = dividendo / divisor;
+		System.out.println("Resultado: " + division);
+
+	}
+
+}

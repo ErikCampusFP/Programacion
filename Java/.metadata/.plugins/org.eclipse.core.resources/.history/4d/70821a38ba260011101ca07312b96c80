@@ -1,0 +1,26 @@
+
+public class Juego {
+	private String titulo;
+	private String empresa;
+	private int puntuacionBase;
+	
+	
+	public Juego(String titulo, String empresa, int puntuacionBase) {
+		super();
+		this.titulo = titulo;
+		this.empresa = empresa;
+		this.puntuacionBase = puntuacionBase;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Juego [titulo=" + titulo + ", empresa=" + empresa + ", puntuacionBase=" + puntuacionBase + "]";
+	}
+	
+	public int calcularPuntuacionFinal() {
+		return puntuacionBase;
+	}
+	
+	
+}

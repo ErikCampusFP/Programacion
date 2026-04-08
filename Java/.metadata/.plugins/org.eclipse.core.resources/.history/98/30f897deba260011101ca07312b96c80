@@ -1,0 +1,14 @@
+
+public class JuegoAccion extends Juego {
+	private int numeroMisiones;
+	private int numeroEnemigosDerrotados;
+	
+	
+	public JuegoAccion(String titulo, String empresa, int puntuacionBase, int numeroMisiones, int numeroEnemigosDerrotados) {
+		super(titulo, empresa, puntuacionBase);
+		this.numeroMisiones = numeroMisiones;
+		this.numeroEnemigosDerrotados = numeroEnemigosDerrotados;
+	}
+	
+	
+}

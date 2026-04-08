@@ -1,0 +1,46 @@
+
+public class Bebida {
+	private int precio;
+	private String nombre;
+	
+	
+	public Bebida(int precio, String nombre) {
+		super();
+		this.precio = precio;
+		this.nombre = nombre;
+	}
+
+
+	public Bebida(Bebida b) {
+	    this.precio = b.precio;
+	    this.nombre = b.nombre;
+	}
+
+	public int getPrecio() {
+		return precio;
+	}
+
+
+	public void setPrecio(int precio) {
+		this.precio = precio;
+	}
+
+
+	public String getNombre() {
+		return nombre;
+	}
+
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Bebida [precio=" + precio + ", nombre=" + nombre + "]";
+	}
+	
+	
+	
+}

@@ -62,7 +62,25 @@ public class Main {
 					break;
 					
 				case "4":
+					String nombre;
+					String dni;
+					String tlf;
 
+					
+					lector.nextLine(); // Limpia el buffer del scanner
+					System.out.println("Escribe tu nombre de Usuario: ");
+					nombre = lector.next();
+					
+					lector.nextLine(); // Limpia el buffer del scanner
+					System.out.println("Escribe tu DNI: ");
+					dni = lector.next();
+					
+					lector.nextLine(); // Limpia el buffer del scanner
+					System.out.println("Escribe tu telefono: ");
+					tlf = lector.next();
+					
+					Cliente cliente = new Cliente(dni,nombre,tlf);
+					
 					System.out.println("Elige una fila: ");
 					lector.nextLine(); // Limpia el buffer del scanner
 					
@@ -72,7 +90,7 @@ public class Main {
 					System.out.println("Elige una butaca: ");
 					butaca = lector.nextInt();
 
-					teatro1.reservarButaca(fila, butaca, paco);				
+					teatro1.reservarButaca(fila, butaca, cliente);				
 					break;
 					
 				case "5":
@@ -81,7 +99,7 @@ public class Main {
 					break;
 					
 				case "6":
-				
+					
 					System.out.println("Elige una fila: ");
 					lector.nextLine(); // Limpia el buffer del scanner
 					
@@ -91,7 +109,7 @@ public class Main {
 					System.out.println("Elige una butaca: ");
 					butaca = lector.nextInt();
 
-					teatro1.eliminarreservarButaca(fila, butaca, paco);				
+					teatro1.eliminarreservarButaca(fila, butaca);				
 					break;
 					
 				case "7":

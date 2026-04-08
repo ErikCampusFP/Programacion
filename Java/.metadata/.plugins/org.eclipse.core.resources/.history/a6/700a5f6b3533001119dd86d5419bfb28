@@ -1,0 +1,309 @@
+import java.util.ArrayList;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		int eleccion = -5;
+		int dinero = 0;
+		int dineroIntroducido = 0;
+		double dineroRecaudado = 0;
+		
+		Bebida b1 = new Bebida(100, "Agua mineral", 0);
+		Bebida b2 = new Bebida(120, "Coca-Cola", 16);
+		Bebida b3 = new Bebida(120, "Aquarius Naranja", 8);
+		Bebida b4 = new Bebida(120, "Aquarius Limón", 7);
+		Bebida b5 = new Bebida(125, "Fanta Naranja", 1);
+		Bebida b6 = new Bebida(125, "Fanta Limón", 6);
+		
+		Scanner lector = new Scanner(System.in);
+        ArrayList<Bebida> ventas = new ArrayList<>();
+		
+
+		
+		while (eleccion != 0) {
+			dinero = 0;
+			
+			System.out.println("*******************Bebidas*********************");
+			System.out.println("1. Agua mineral - 1.00 € - Stock: " + b1.getStock());
+			System.out.println("2. Coca-Cola - 1.20 € - Stock: " + b2.getStock());
+			System.out.println("3. Aquarius Naranja - 1.20 € - Stock: " + b3.getStock());
+			System.out.println("4. Aquarius Limón - 1.20 € - Stock: " + b4.getStock());
+			System.out.println("5. Fanta Naranja - 1.25 € - Stock: " + b5.getStock());
+			System.out.println("6. Fanta Limón - 1.25 € - Stock: " + b6.getStock());
+			System.out.println("0. Cerrar máquina");
+			
+			
+			System.out.println("Elige una opción: ");
+			try{
+				eleccion = lector.nextInt();
+			} catch (InputMismatchException e) {
+				System.out.println("No se puede usar String");
+			}
+			
+			lector.nextLine();
+			
+			switch (eleccion) {
+				case 1:
+					
+					if(b1.getStock() < 0) {
+						System.out.println("No queda stock - No se puede comprar más");
+						break;
+					}
+					
+			        System.out.println("Se ha seleccionado Agua Mineral - Introduce 100 centimos");
+			        System.out.println("Introduce la cantidad de dinero: ");
+			        
+					try{
+						dineroIntroducido = lector.nextInt();
+					} catch (InputMismatchException e) {
+						System.out.println("No se puede usar String");
+					}
+				
+					lector.nextLine();
+					dinero += dineroIntroducido;
+
+					
+					while (dinero < 100) {
+						System.out.println("Dinero insuficiente - falta " +(100 - dinero) + " centimos");
+				        System.out.println("Introduce la cantidad de dinero: ");
+				        
+						try{
+					        dineroIntroducido = lector.nextInt();
+						} catch (InputMismatchException e) {
+							System.out.println("No se puede usar String");
+						}
+				        
+						dinero += dineroIntroducido;
+						lector.nextLine();
+					}
+					
+					System.out.println("Venta realizada correctamente");
+
+					if (dinero >100) {
+						int cambio = dinero - 100;
+						System.out.println("Cambio = " + cambio + " centimos");
+					}
+					b1.bajarStock();
+					ventas.add(new Bebida(b1));
+					dineroRecaudado += 100;
+					break;
+					
+				
+				case 2:
+			        System.out.println("Se ha seleccionado Coca Cola - Introduce 120 centimos");
+			        System.out.println("Introduce la cantidad de dinero: ");
+			        
+					try{
+						dineroIntroducido = lector.nextInt();
+					} catch (InputMismatchException e) {
+						System.out.println("No se puede usar String");
+					}
+					
+					lector.nextLine();
+					dinero += dineroIntroducido;
+
+					
+					while (dinero < 120) {
+						System.out.println("Dinero insuficiente - falta " +(120 - dinero) + " centimos");
+				        System.out.println("Introduce la cantidad de dinero: ");
+				        
+						try{
+					        dineroIntroducido = lector.nextInt();
+						} catch (InputMismatchException e) {
+							System.out.println("No se puede usar String");
+						}
+						
+						dinero += dineroIntroducido;
+						lector.nextLine();
+					}
+					
+					System.out.println("Venta realizada correctamente");
+
+					if (dinero >120) {
+						int cambio = dinero - 120;
+						System.out.println("Cambio = " + cambio + " centimos");
+					}
+					ventas.add(new Bebida(b2));
+					dineroRecaudado += 100;
+					break;
+					
+					
+				case 3:
+			        System.out.println("Se ha seleccionado Aquarius Naranja - Introduce 120 centimos");
+			        System.out.println("Introduce la cantidad de dinero: ");
+			        
+					try{
+						dineroIntroducido = lector.nextInt();
+					} catch (InputMismatchException e) {
+						System.out.println("No se puede usar String");
+					}
+					
+					lector.nextLine();
+					dinero += dineroIntroducido;
+
+					
+					while (dinero < 120) {
+						System.out.println("Dinero insuficiente - falta " +(120 - dinero) + " centimos");
+				        System.out.println("Introduce la cantidad de dinero: ");
+				        
+						try{
+							dineroIntroducido = lector.nextInt();
+						} catch (InputMismatchException e) {
+							System.out.println("No se puede usar String");
+						}
+						
+						dinero += dineroIntroducido;
+						lector.nextLine();
+					}
+					
+					System.out.println("Venta realizada correctamente");
+
+					if (dinero >120) {
+						int cambio = dinero - 120;
+						System.out.println("Cambio = " + cambio + " centimos");
+					}
+					ventas.add(new Bebida(b3));
+					dineroRecaudado += 120;
+					break;
+					
+				case 4:
+			        System.out.println("Se ha seleccionado Aquarius Limón - Introduce 120 centimos");
+			        System.out.println("Introduce la cantidad de dinero: ");
+			        
+					try{
+						dineroIntroducido = lector.nextInt();
+					} catch (InputMismatchException e) {
+						System.out.println("No se puede usar String");
+					}
+					
+					lector.nextLine();
+					dinero += dineroIntroducido;
+
+					
+					while (dinero < 120) {
+						System.out.println("Dinero insuficiente - falta " +(120 - dinero) + " centimos");
+				        System.out.println("Introduce la cantidad de dinero: ");
+				        
+						try{
+							dineroIntroducido = lector.nextInt();
+						} catch (InputMismatchException e) {
+							System.out.println("No se puede usar String");
+						}
+						
+						dinero += dineroIntroducido;
+						lector.nextLine();
+					}
+					
+					System.out.println("Venta realizada correctamente");
+
+					if (dinero >120) {
+						int cambio = dinero - 120;
+						System.out.println("Cambio = " + cambio + " centimos");
+					}
+					ventas.add(new Bebida(b4));
+					dineroRecaudado += 120;
+					break;
+					
+				case 5:
+			        System.out.println("Se ha seleccionado Fanta Naranja - Introduce 125 centimos");
+			        System.out.println("Introduce la cantidad de dinero: ");
+			        
+					try{
+						dineroIntroducido = lector.nextInt();
+					} catch (InputMismatchException e) {
+						System.out.println("No se puede usar String");
+					}
+					
+					lector.nextLine();
+					dinero += dineroIntroducido;
+
+					
+					while (dinero < 125) {
+						System.out.println("Dinero insuficiente - falta " +(125 - dinero) + " centimos");
+				        System.out.println("Introduce la cantidad de dinero: ");
+				        
+						try{
+							dineroIntroducido = lector.nextInt();
+						} catch (InputMismatchException e) {
+							System.out.println("No se puede usar String");
+						}
+						
+						dinero += dineroIntroducido;
+						lector.nextLine();
+					}
+					
+					System.out.println("Venta realizada correctamente");
+
+					if (dinero >125) {
+						int cambio = dinero - 125;
+						System.out.println("Cambio = " + cambio + " centimos");
+					}
+					ventas.add(new Bebida(b5));
+					dineroRecaudado += 125;
+					break;
+				
+					
+				case 6:
+			        System.out.println("Se ha seleccionado Fanta Limón - Introduce 125 centimos");
+			        System.out.println("Introduce la cantidad de dinero: ");
+			        
+					try{
+						dineroIntroducido = lector.nextInt();
+					} catch (InputMismatchException e) {
+						System.out.println("No se puede usar String");
+					}
+					
+					lector.nextLine();
+					dinero += dineroIntroducido;
+
+					
+					while (dinero < 125) {
+						System.out.println("Dinero insuficiente - falta " +(125 - dinero) + " centimos");
+				        System.out.println("Introduce la cantidad de dinero: ");
+				        
+						try{
+							dineroIntroducido = lector.nextInt();
+						} catch (InputMismatchException e) {
+							System.out.println("No se puede usar String");
+						}
+						
+						dinero += dineroIntroducido;
+						lector.nextLine();
+					}
+					
+					System.out.println("Venta realizada correctamente");
+
+					if (dinero >125) {
+						int cambio = dinero - 125;
+						System.out.println("Cambio = " + cambio + " centimos");
+					}
+					ventas.add(new Bebida(b6));
+					dineroRecaudado += 125;
+					break;
+					
+					
+				case 0:
+					System.out.println("******************Ventas Realizadas******************");
+					System.out.println(ventas);
+					System.out.println(" ");
+					System.out.println("******************Dinero Recaudado*******************");
+					dineroRecaudado = dineroRecaudado/100;
+					System.out.println(dineroRecaudado + " €");
+					
+					break;
+					
+				
+				default:
+					System.out.println("Opción no valida");
+		}
+
+				
+			
+		}
+
+
+	}
+
+}
