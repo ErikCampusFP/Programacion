@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html","k":"18"},{"p":"gimnasio","l":"Alumno"},{"p":"gimnasio","l":"Entrenador"},{"p":"gimnasio","l":"Gimnasio"},{"p":"gimnasio","l":"IGimnasio","k":"10"},{"p":"gimnasio","l":"Reserva"},{"p":"gimnasio","l":"Usuario"}];updateSearchResults();

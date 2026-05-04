@@ -1,0 +1,72 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+	
+public class Principal3 {
+
+	public static void main(String[] args) throws SQLException {
+		
+		// Paso 1: Cargar el driver
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+		} catch (ClassNotFoundException e) {
+			System.out.println("No se ha encontrado el driver para MySQL");
+			return;
+		}
+		System.out.println("Se ha cargado el Driver de MySQL");
+		
+		// Paso 2: Establecer conexión con la base de datos
+		String cadenaConexion = "jdbc:mysql://localhost:3306/tienda";
+		String user = "root";
+		String pass = "curso";
+		Connection con;
+		try {
+			con = DriverManager.getConnection(cadenaConexion, user, pass);
+		} catch (SQLException e) {
+			System.out.println("No se ha podido establecer la conexión con la BD");
+			System.out.println(e.getMessage());
+			return;
+		}
+		System.out.println("Se ha establecido la conexión con la Base de datos");
+		
+		// Paso 3: Interactuar con la BD 
+		try {
+			// JDBC usa por defecto AutoCommit, lo que implica que cada operación se ejecuta en una transacción independiente
+			con.setAutoCommit(false);
+			Statement sentencia = con.createStatement();
+			
+			String sql = "INSERT INTO CLIENTE VALUES ('51666666A','ROCAFLOR DELGADO RODOLFO', 'C/ PITONISA, 45', '616656644', 'SEVILLA')";
+			sentencia.executeUpdate(sql);
+			sql = "INSERT INTO FACTURA VALUES (5006,'2026/04/23', 0, '51666666A')";
+			sentencia.executeUpdate(sql);
+			sql = "INSERT INTO DETALLE VALUES (5006,'BAB5', 1, 7)";
+			sentencia.executeUpdate(sql);		
+			sql = "INSERT INTO DETALLE VALUES (5006,'BI20', 2, 100)";
+			sentencia.executeUpdate(sql);	
+			sql = "UPDATE PRODUCTO SET STOCK=STOCK-1 WHERE CODIGO='BAB5'";
+			sentencia.executeUpdate(sql);	
+			sql = "UPDATE PRODUCTO SET STOCK=STOCKKK-2 WHERE CODIGO='BI20'"; // Si quitamos el setAutoCommit, se ejecuta todo menos esto
+			sentencia.executeUpdate(sql);	//está hecho aposta para producir error
+			
+			con.commit();
+			// Si ejecuto aquí más operaciones, forman parte de la segunda transacción
+			
+		} catch (SQLException e) {
+			System.out.println("Ha ocurrido un error al añadir la factura");
+			System.out.println(e.getMessage()); 
+			con.rollback(); // Deshace una transacción (lo que hace que no se haga nada)
+		}
+		
+		
+		// Paso 4: Cerrar la conexión
+		try {
+			con.close();
+		} catch (SQLException e) {
+			System.out.println("No se ha podido cerrar la conexión con la BD");
+			System.out.println(e.getMessage());
+			return;
+		}
+		System.out.println("Se ha cerrado la base de datos");
+	}	
+}

@@ -1,0 +1,71 @@
+package ActividadEvaluable2;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+import gimnasio.*;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// Generamos la lista de usuarios
+        List<Usuario> usuarios = new ArrayList<>();
+        
+        // Se esta Usando el Polimorfismo
+        
+        // Generamos alumnos y entrenadores
+        Alumno alumno1 = new Alumno("12345678A", "Ana Garcia", "612345678", LocalDate.of(2023, 1, 15));
+        Alumno alumno2 = new Alumno("23456789B", "Luis Martinez", "623456789", LocalDate.of(2023, 2, 10));
+        Alumno alumno3 = new Alumno("34567890C", "Maria Lopez", "634567890", LocalDate.of(2023, 3, 5));
+        Alumno alumno4 = new Alumno("45678901D", "Pedro Sanchez", "645678901", LocalDate.of(2023, 4, 20));
+        Alumno alumno5 = new Alumno("56789012E", "Lucia Fernandez", "656789012", LocalDate.of(2023, 5, 12));
+        Alumno alumno6 = new Alumno("67890123F", "Javier Gomez", "667890123", LocalDate.of(2023, 6, 8));
+        Alumno alumno7 = new Alumno("78901234G", "Elena Torres", "678901234", LocalDate.of(2023, 7, 25));
+        Alumno alumno8 = new Alumno("89012345H", "David Ruiz", "689012345", LocalDate.of(2023, 8, 14));
+        Alumno alumno9 = new Alumno("90123456I", "Sofia Moreno", "690123456", LocalDate.of(2023, 9, 3));
+        Alumno alumno10 = new Alumno("01234567J", "Pablo Navarro", "601234567", LocalDate.of(2023, 10, 19));
+        
+        Entrenador entrenador1 = new Entrenador("11111111C", "Carlos Ruiz", "611111111", LocalDate.of(2020, 6, 1), 35.0);
+        Entrenador entrenador2 = new Entrenador("22222222D", "Marta Perez", "622222222", LocalDate.of(2019, 3, 15), 40.0);
+        Entrenador entrenador3 = new Entrenador("33333333E", "Jorge Ramirez", "633333333", LocalDate.of(2021, 9, 10), 32.5);
+        
+        // Añadimos los usuarios y entrenadores a la lista
+        usuarios.add(alumno1);
+        usuarios.add(alumno2);
+        usuarios.add(alumno3);
+        usuarios.add(alumno4);
+        usuarios.add(alumno5);
+        usuarios.add(alumno6);
+        usuarios.add(alumno7);
+        usuarios.add(alumno8);
+        usuarios.add(alumno9);
+        usuarios.add(alumno10);
+        usuarios.add(entrenador1);
+        usuarios.add(entrenador2);
+        usuarios.add(entrenador3);
+
+        // Generamos las variables
+        int eleccion = -1;
+        
+        
+        Scanner lector = new Scanner(System.in);
+        System.out.println("*******************MENU*********************");
+        System.out.println("1. Crear un Proyecto");
+        System.out.println("2. Añadir Tareas al Proyecto");
+        System.out.println("3. Ver Proyectos");
+        System.out.println("4. Ver Tareas de un Proyecto");
+        System.out.println("0. Terminar Proyecto");
+
+        while (eleccion != 0) {
+        System.out.println("Elige una opción: ");
+        try{
+        eleccion = lector.nextInt();
+        } catch (InputMismatchException e) {
+        System.out.println("No se puede usar String");
+        }
+        lector.nextLine();
+
+	}
+
+}

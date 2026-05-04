@@ -1,0 +1,88 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class Principal {
+	public static void main(String[] args) {
+		
+		// Paso 1: Cargar el driver
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+		} catch (ClassNotFoundException e) {
+			System.out.println("No se ha encontrado el driver para MySQL");
+			return;
+		}
+		System.out.println("Se ha cargado el Driver de MySQL");
+		
+		// Paso 2: Establecer conexión con la base de datos
+		String cadenaConexion = "jdbc:mysql://localhost:3306/supermercado";
+		String user = "root";
+		String pass = "curso"; 
+		Connection con;
+		try {
+			con = DriverManager.getConnection(cadenaConexion, user, pass);
+		} catch (SQLException e) {
+			System.out.println("Error en la conexión con la BD");
+			System.out.println(e.getMessage());
+			return;
+		}
+		System.out.println("Se ha establecido la conexión con la Base de datos");
+		
+		// Paso 3: Interactuar con la BD (todavía pendiente)
+		Statement motorSQL;
+		try {
+			motorSQL = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+			System.out.println("Creado Statement con éxito");
+			// Ahora el cursor apunta a Before start
+			rs.next(); // Ahora apunta al cliente 1
+			System.out.println(rs.getString("cia") + " (" + rs.getString("contacto") + ")");
+			
+			rs.next(); // Ahora apunta al cliente 2
+			System.out.println(rs.getString("cia") + " (" + rs.getString("contacto") + ")");
+			
+			// Da error, ya que el cursor es solo de tipo forward
+			rs.previous(); // Ahora apunta al cliente 1
+			System.out.println(rs.getString("cia") + " (" + rs.getString("contacto") + ")");
+			
+			rs.absolute(5); // Ahora esta en la fila 5, ya que se mueve a esa fila
+			System.out.println(rs.getString("cia") + " (" + rs.getString("contacto") + ")");
+			
+			rs.relative(3); // Ahora esta en la fila 5, ya que avanza 3 posiciones
+			System.out.println(rs.getString("cia") + " (" + rs.getString("contacto") + ")");
+			
+			rs.first(); // Ahora esta en primera fila
+			System.out.println(rs.getString("cia") + " (" + rs.getString("contacto") + ")");
+			
+			rs.last(); // Ahora esta en la ultima fila
+			System.out.println(rs.getString("cia") + " (" + rs.getString("contacto") + ")");
+			
+			rs.next(); // Va al catch porque ya no quedan elementos
+			System.out.println(rs.getString("cia") + " (" + rs.getString("contacto") + ")");
+			
+			rs.moveToInsertRow(); 
+			rs.updateString("idcliente", "HUERT");
+			rs.updateString("cia", "La huerta murciana"); 
+			rs.updateString("contacto", "Amelia González"); 
+			rs.updateString("cargo", "Representante de ventas"); 
+			rs.updateString("pais", "España"); 
+			rs.insertRow(); 
+
+			
+		} catch (SQLException e) {
+			System.out.println("Error interactuando con la BD");
+			System.out.println(e.getMessage());
+		}
+		
+		// Paso 4: Cerrar la conexión
+		try {
+			con.close();
+		} catch (SQLException e) {
+			System.out.println("No se ha podido cerrar la conexión con la BD");
+			System.out.println(e.getMessage());
+			return;
+		}
+		System.out.println("Se ha cerrado la base de datos");
+	}
+}

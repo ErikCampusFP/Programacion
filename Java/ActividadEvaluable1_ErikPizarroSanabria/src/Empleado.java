@@ -6,14 +6,34 @@ public class Empleado {
 	private String email;
 	private String telefono;
 	
-	public Empleado(int id, String nombre, String puesto, String email, String telefono) {
+	
+	
+
+	
+	
+	// Constructor 1
+	public Empleado(int id, String nombre, String puesto, String email, String telefono) throws TelephoneException {
+	    this.id = id;
+	    this.nombre = nombre;
+	    this.puesto = puesto;
+	    this.email = email;
+
+	    if (telefono != null && telefono.length() == 9) {
+	        this.telefono = telefono;
+	    } else {
+	        throw new TelephoneException("El teléfono debe tener exactamente 8 caracteres");
+	    }
+	}
+	
+	// Constructor 2
+	public Empleado(int id, String nombre, String puesto) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.puesto = puesto;
-		this.email = email;
-		this.telefono = telefono;
 	}
+	
+	
 
 	public int getId() {
 		return id;
@@ -46,7 +66,7 @@ public class Empleado {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
+	
 	public String getTelefono() {
 		return telefono;
 	}

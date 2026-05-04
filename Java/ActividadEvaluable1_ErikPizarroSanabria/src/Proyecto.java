@@ -49,10 +49,4 @@ public class Proyecto {
 		return "Projecto [nombre=" + nombre + ", descripcion=" + descripcion + ", tareas=" + tareas + "]";
 	}
 	
-	
-	
-	
-    
-    
-
-}
+   }

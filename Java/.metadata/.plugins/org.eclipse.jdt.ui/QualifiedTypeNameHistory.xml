@@ -3,4 +3,8 @@
     <fullyQualifiedTypeName name="java.nio.file.FileSystemAlreadyExistsException"/>
     <fullyQualifiedTypeName name="banca.Cuenta"/>
     <fullyQualifiedTypeName name="InstrumentoMusical"/>
+    <fullyQualifiedTypeName name="IAprendeIngles"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="java.sql.Statement"/>
+    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
 </qualifiedTypeNameHistroy>

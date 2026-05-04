@@ -5,26 +5,26 @@ public class Tarea {
 	private String dificultad;
 	private String descripcion;
     private Empleado empleadoAsignado;
+    private int tiempoEstimado;
     private boolean completada;
     
-    /**
-     * @param id
-     * @param nombre
-     * @param dificultad
-     * @param descripcion
-     * @param empleadoAsignado
-     * @param completada
-     */
-	// Constructor 1 -> Básico
-	public Tarea(int id, String nombre, String dificultad, String descripcion, Empleado empleadoAsignado,
-			boolean completada) {
+    
+
+    public Tarea(int id, String nombre, String dificultad, String descripcion, Empleado empleadoAsignado, int tiempoEstimado) throws TelephoneException {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.dificultad = dificultad;
 		this.descripcion = descripcion;
+		this.tiempoEstimado = tiempoEstimado;
 		this.empleadoAsignado = empleadoAsignado;
-		this.completada = completada;
+		this.completada = false;
+		
+	    if (tiempoEstimado < 0) {
+	        this.tiempoEstimado = tiempoEstimado;
+	    } else {
+	        throw new TelephoneException("El tiempo estimado tiene que ser positivo");
+	    }
 	}
 
 	public int getId() {
@@ -35,6 +35,7 @@ public class Tarea {
 	public void setId(int id) {
 		this.id = id;
 	}
+	
 
 
 	public String getNombre() {
@@ -93,14 +94,6 @@ public class Tarea {
 				+ ", empleadoAsignado=" + empleadoAsignado + ", completada=" + completada + "]";
 	}
 	
-	
-	
-    
-	
-	
-
-	
-	
-	
+		
 	
 }

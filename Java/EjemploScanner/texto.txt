@@ -1,0 +1,3 @@
+Peras;3.5;25
+Tomates;1.5;50
+Uvas;2.5;25
