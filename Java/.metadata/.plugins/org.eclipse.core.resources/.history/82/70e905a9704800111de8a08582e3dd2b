@@ -1,0 +1,8 @@
+package gestion;
+import gestion.personal.Empleado;
+public class Principal {
+   public static void main(String[] args) {
+       Empleado emp = new Empleado("Ana", 1500.0);
+       System.out.println(emp);
+   }
+}

@@ -1,0 +1,3 @@
+module miaplicacion {
+	requires empresa;
+}
